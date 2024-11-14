@@ -1,0 +1,250 @@
+.create-schedule-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+/* Progress Bar */
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    color: var(--tertiary);
+    transition: var(--transition);
+}
+
+.progress-step.active {
+    color: var(--primary);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg3);
+    border: var(--border-weight) solid var(--tertiary);
+    transition: var(--transition);
+}
+
+.progress-step.active .step-number {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-color: var(--accent);
+}
+
+.progress-line {
+    flex: 1;
+    height: var(--border-weight);
+    background: var(--tertiary);
+    margin: 0 1rem;
+    transition: var(--transition);
+    position: relative;
+    top: -20px;
+}
+
+.progress-line.active {
+    background: linear-gradient(to right, var(--accent), var(--accent2));
+}
+
+/* Form Styles */
+.schedule-form {
+    background: var(--bg1);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: var(--border-weight) solid var(--bg3);
+}
+
+.form-step {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--tertiary);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background: var(--bg2);
+    border: var(--border-weight) solid var(--bg3);
+    color: var(--primary);
+    transition: var(--transition);
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(255, 96, 0, 0.1);
+}
+
+.date-range-inputs,
+.time-range-inputs {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.date-range-inputs input,
+.time-range-inputs input {
+    flex: 1;
+}
+
+.date-range-inputs span,
+.time-range-inputs span {
+    color: var(--tertiary);
+}
+
+/* Navigation Buttons */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.nav-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: var(--medium);
+    transition: var(--transition);
+}
+
+.nav-button.primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    color: white;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 96, 0, 0.2);
+}
+
+.nav-button:active {
+    transform: translateY(-1px);
+}
+
+.nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .create-schedule-container {
+        padding: 1rem;
+    }
+
+    .progress-bar {
+        padding: 0;
+    }
+
+    .progress-step span {
+        font-size: 0.8rem;
+    }
+
+    .date-range-inputs,
+    .time-range-inputs {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .date-range-inputs span,
+    .time-range-inputs span {
+        display: none;
+    }
+}
+
+.form-step h2 {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.form-group textarea {
+    resize: none; /* Prevent textarea resizing */
+}
+
+.success-message {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--bg2);
+    border-radius: 1rem;
+    border: var(--border-weight) solid var(--accent);
+}
+
+.success-message h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.share-link-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.share-link-container input {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background: var(--bg1);
+    border: var(--border-weight) solid var(--bg3);
+    color: var(--primary);
+    cursor: text;
+}
+
+.copy-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.copy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 96, 0, 0.2);
+}
+
+.copy-button:active {
+    transform: translateY(-1px);
+} 

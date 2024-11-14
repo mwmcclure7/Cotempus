@@ -1,0 +1,94 @@
+:root {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  --extra-bold: 600;
+  --bold: 500;
+  --medium: 400;
+  --light: 300;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --bg1: #000000;
+  --bg2: #111111;
+  --bg3: #222222;
+
+  --primary: #ffffff;
+  --secondary: #000000;
+  --tertiary: #808080;
+  --accent: #ff6000;
+  --accent2: #ff5f6d;
+
+  --transition: 0.3s ease;
+  background: var(--bg2);
+
+  --border-weight: 2px;
+}
+
+h1 {
+  font-weight: var(--extra-bold);
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-weight: var(--bold);
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-weight: var(--medium);
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-weight: var(--regular);
+  font-size: 1rem;
+}
+
+p {
+  font-weight: var(--medium);
+  font-size: 1rem;
+}
+
+a {
+  font-weight: var(--medium);
+  font-size: 1rem;
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+a:active {
+  font-size: 1rem;
+}
+
+button {
+  font-weight: var(--medium);
+  font-size: 1rem;
+  background-color: transparent;
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: var(--transition);
+  border: var(--border-weight) solid var(--primary);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+button:not(.auth-button):active {
+  transform: scale(0.95);
+}

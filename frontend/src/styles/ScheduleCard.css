@@ -1,0 +1,183 @@
+.schedule-card {
+    background: var(--bg1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: var(--border-weight) solid var(--bg3);
+    transition: all var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.schedule-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.schedule-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.schedule-meta {
+    display: flex;
+    gap: 1rem;
+    color: var(--tertiary);
+    font-size: 0.9rem;
+}
+
+.schedule-details {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: var(--border-weight) solid var(--bg3);
+}
+
+.description {
+    color: var(--tertiary);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.share-section {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.share-section input {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background: var(--bg2);
+    border: var(--border-weight) solid var(--bg3);
+    color: var(--primary);
+}
+
+.share-section button {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    padding: 0.75rem 1.5rem;
+}
+
+.recommendations {
+    margin-top: 2rem;
+}
+
+.recommendations h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.recommendation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.recommendation-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: var(--bg2);
+    border-radius: 0.5rem;
+    color: var(--primary);
+}
+
+.availability-bar {
+    flex: 1;
+    height: 0.5rem;
+    background: var(--bg3);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.availability-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.action-buttons button {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: all var(--transition);
+}
+
+.schedule-card input,
+.schedule-card textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background: var(--bg2);
+    border: var(--border-weight) solid var(--bg3);
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.schedule-card textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.schedule-card.expanded {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .schedule-card {
+        padding: 1rem;
+    }
+
+    .schedule-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .share-section {
+        flex-direction: column;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+}
+
+.delete-button {
+    background: var(--bg2);
+    color: #ff4444;
+    border: var(--border-weight) solid #ff4444;
+}
+
+.delete-button:hover {
+    background: rgba(255, 68, 68, 0.1);
+}
+
+.delete-confirm-button {
+    background: #ff4444;
+    color: white;
+}
+
+.delete-confirm-button:hover {
+    background: #ff2222;
+} 

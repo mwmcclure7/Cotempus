@@ -1,0 +1,73 @@
+:root {
+    --header-height: 4rem;
+}
+
+.header {
+    height: var(--header-height);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: var(--bg1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.header-left, .header-right {
+    flex: 1;
+}
+
+.header-center {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.logo {
+    height: 2.5rem;
+    transition: var(--transition);
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    border-radius: 50%;
+    padding: 0.25rem;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: var(--medium);
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header button:hover {
+    border: var(--border-weight) solid var(--accent);
+}
+
+.profile-icon {
+    height: 2rem;
+    border: 3.5px solid white;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.profile-icon:hover {
+    transform: scale(1.1);
+}

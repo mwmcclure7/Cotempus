@@ -1,0 +1,166 @@
+.join-schedule-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.schedule-header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.schedule-header .description {
+    color: var(--tertiary);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 800px;
+}
+
+.schedule-header p:last-child {
+    color: var(--primary);
+    font-size: 1rem;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.name-input-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--bg1);
+    border-radius: 0.5rem;
+    border: var(--border-weight) solid var(--bg3);
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.name-input-container label {
+    color: var(--tertiary);
+    font-size: 1rem;
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.name-input-container input {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background: var(--bg2);
+    border: var(--border-weight) solid var(--bg3);
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.name-input-container input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(255, 96, 0, 0.1);
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.submit-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: var(--bold);
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--primary);
+    transition: all var(--transition);
+}
+
+.submit-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 96, 0, 0.2);
+}
+
+.submit-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.loading, .error, .success-message {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg1);
+    border-radius: 1rem;
+    border: var(--border-weight) solid var(--bg3);
+    margin: 2rem auto;
+    max-width: 500px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.error {
+    border-color: rgba(255, 68, 68, 0.3);
+    color: #ff4444;
+}
+
+.success-message {
+    border-color: var(--accent);
+}
+
+.success-message h2 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.success-message p {
+    color: var(--tertiary);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .join-schedule-container {
+        padding: 1rem;
+    }
+
+    .schedule-header h1 {
+        font-size: 2rem;
+    }
+
+    .name-input-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .name-input-container input {
+        width: 100%;
+    }
+} 

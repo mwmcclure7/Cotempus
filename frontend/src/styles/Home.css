@@ -1,0 +1,248 @@
+.home-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-section {
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+}
+
+.hero-question {
+    font-size: 2rem;
+    color: var(--tertiary);
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: var(--thin);
+    margin: 0;
+}
+
+.gradient-text {
+    font-weight: var(--extra-bold);
+    background: linear-gradient(
+        to right,
+        var(--accent),
+        var(--accent2),
+        var(--accent)
+    );
+    background-size: 300% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: flow 3s linear infinite;
+}
+
+/* Features Section */
+.features-section {
+    margin-top: 4rem;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+    padding: 0 1rem;
+}
+
+.step {
+    background: var(--bg1);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: var(--border-weight) solid var(--bg3);
+    transition: transform var(--transition);
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+
+.step-number {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: var(--bold);
+}
+
+.cta-button:hover {
+    border: var(--border-weight) solid var(--accent);
+}
+
+/* Benefits Section */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+    padding: 0 1rem;
+}
+
+.benefit {
+    padding: 1.5rem;
+    background: var(--bg1);
+    border-radius: 1rem;
+    border: var(--border-weight) solid var(--bg3);
+    transition: transform var(--transition);
+}
+
+.benefit:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* CTA Section */
+.cta-section {
+    margin: 6rem 0;
+    padding: 3rem;
+    background: var(--bg1);
+    border-radius: 1rem;
+    border: var(--border-weight) solid var(--bg3);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.primary-button {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    padding: 1rem 2rem;
+}
+
+.secondary-button {
+    background: transparent;
+    border: var(--border-weight) solid var(--accent);
+    padding: 1rem 2rem;
+}
+
+/* Graphics */
+.availability-graphic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.results-graphic {
+    margin-top: 1rem;
+}
+
+.match-indicator {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.perfect {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+}
+
+.good {
+    background: var(--bg3);
+    border: var(--border-weight) solid #00ffff;
+    color: #00ffff;
+}
+
+.limited {
+    background: var(--bg3);
+    border: var(--border-weight) solid #ffd700;
+    color: #ffd700;
+}
+
+/* Animations */
+@keyframes flow {
+    0% {
+        background-position: 300% center;
+    }
+    100% {
+        background-position: 0% center;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    animation-play-state: paused;
+}
+
+.slide-in {
+    opacity: 0;
+    animation: slideIn 0.8s ease forwards;
+    animation-play-state: paused;
+}
+
+/* Intersection Observer will trigger these */
+.fade-in.visible, .slide-in.visible {
+    animation-play-state: running;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .steps-container, .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-question {
+        font-size: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .steps-container, .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+} 
