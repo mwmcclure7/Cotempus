@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../styles/CreateSchedule.css';
 import api from '../api';
+import toast from 'react-hot-toast';
 
 function CreateSchedule() {
     const [step, setStep] = useState(1);
@@ -243,13 +244,6 @@ function CreateSchedule() {
                         <button 
                             type="submit"
                             className="nav-button primary"
-                            onClick={() => {
-                                const button = document.querySelector('button[type="submit"]') as HTMLButtonElement;
-                                button.disabled = true;
-                                setTimeout(() => {
-                                    button.disabled = false;
-                                }, 2000);
-                            }}
                             disabled={!isStepValid(1) || !isStepValid(2) || !isStepValid(3)}
                         >
                             Create Schedule
@@ -272,7 +266,7 @@ function CreateSchedule() {
                         <button 
                             onClick={() => {
                                 navigator.clipboard.writeText(shareableLink!);
-                                // Optionally add a toast notification here
+                                toast.success('Link copied to clipboard!');
                             }}
                             className="copy-button"
                         >

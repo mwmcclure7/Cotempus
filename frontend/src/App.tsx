@@ -8,6 +8,8 @@ import Header from './components/Header'
 import Settings from './pages/Settings'
 import MySchedules from './pages/MySchedules'
 import './styles/App.css'
+import { Toaster } from 'react-hot-toast'
+
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
             <Route path="/settings" element={<Settings />} />
           </Routes>
         </div>
+        <Toaster position="top-center" />
       </div>
     </Router>
   )

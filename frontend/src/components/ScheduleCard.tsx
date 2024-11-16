@@ -4,7 +4,7 @@ import AvailabilityCalendar from './AvailabilityCalendar';
 import api from '../api';
 import '../styles/ScheduleCard.css';
 import { Schedule } from '../types/schedule';
-
+import toast from 'react-hot-toast';
 interface ScheduleCardProps {
     schedule: Schedule;
     onUpdate: () => void;
@@ -96,7 +96,10 @@ function ScheduleCard({ schedule, onUpdate, onDelete }: ScheduleCardProps) {
                             readOnly 
                             onClick={(e) => e.currentTarget.select()}
                         />
-                        <button onClick={() => navigator.clipboard.writeText(shareableLink)}>
+                        <button onClick={() => {
+                            navigator.clipboard.writeText(shareableLink);
+                            toast.success('Link copied to clipboard!');
+                        }}>
                             Copy Link
                         </button>
                     </div>
