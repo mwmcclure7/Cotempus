@@ -40,9 +40,12 @@ function MySchedules() {
     const fetchSchedules = async () => {
         try {
             const response = await api.get<Schedule[]>('/api/schedules/');
-            setSchedules(response.data);
-            if (response.data.length > 0) {
-                setSelectedSchedule(response.data[0]);
+            const sortedSchedules = response.data.sort((a, b) => 
+                new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+            );
+            setSchedules(sortedSchedules);
+            if (sortedSchedules.length > 0) {
+                setSelectedSchedule(sortedSchedules[0]);
             }
         } catch (err) {
             setError('Failed to load schedules');

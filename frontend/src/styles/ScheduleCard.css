@@ -68,6 +68,7 @@
     background: linear-gradient(135deg, var(--accent), var(--accent2));
     border: none;
     padding: 0.75rem 1.5rem;
+    height: 100%;
 }
 
 .recommendations {
