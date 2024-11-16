@@ -18,7 +18,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    padding: 1rem;
 }
 
 .schedule-header h3 {
@@ -168,10 +169,12 @@
     background: var(--bg2);
     color: #ff4444;
     border: var(--border-weight) solid #ff4444;
+    background: rgba(255, 68, 68, 0.07);
 }
 
 .delete-button:hover {
-    background: rgba(255, 68, 68, 0.1);
+    background: rgba(255, 68, 68, 0.2);
+    color: #ff4444;
 }
 
 .delete-confirm-button {

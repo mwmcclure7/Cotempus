@@ -207,6 +207,7 @@
     background: var(--bg2);
     border-radius: 1rem;
     border: var(--border-weight) solid var(--accent);
+    opacity: 1;
 }
 
 .success-message h3 {

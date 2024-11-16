@@ -87,6 +87,7 @@ button:hover {
   cursor: pointer;
   background-color: var(--accent);
   box-shadow: 0 0 10px var(--accent);
+  border-color: var(--accent);
 }
 
 button:not(.auth-button):active {

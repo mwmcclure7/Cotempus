@@ -144,7 +144,7 @@ function ScheduleCard({ schedule, onUpdate, onDelete }: ScheduleCardProps) {
                         ) : showDeleteConfirm ? (
                             <>
                                 <button 
-                                    className="delete-confirm-button"
+                                    className="delete-button"
                                     onClick={() => onDelete(schedule.id)}
                                 >
                                     Confirm Delete
