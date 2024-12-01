@@ -8,6 +8,9 @@ import Header from './components/Header'
 import Settings from './pages/Settings'
 import MySchedules from './pages/MySchedules'
 import './styles/App.css'
+import { Toaster } from 'react-hot-toast'
+import ProtectedRoute from './components/ProtectedRoute'
+
 
 function App() {
   return (
@@ -17,15 +20,16 @@ function App() {
         <div className="content-container">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/create" element={<CreateSchedule />} />
+            <Route path="/create" element={<ProtectedRoute><CreateSchedule /></ProtectedRoute>} />
             <Route path="/join" element={<JoinSchedule />} />
             <Route path="/schedule/:scheduleId" element={<JoinSchedule />} />
             <Route path="/login" element={<SignIn />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/my-schedules" element={<MySchedules />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/my-schedules" element={<ProtectedRoute><MySchedules /></ProtectedRoute>} />
+            <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
           </Routes>
         </div>
+        <Toaster position="top-center" />
       </div>
     </Router>
   )

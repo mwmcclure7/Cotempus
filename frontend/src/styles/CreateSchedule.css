@@ -153,6 +153,10 @@
     opacity: 0.5;
     cursor: not-allowed;
 }
+.nav-button:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+}
 
 /* Animations */
 @keyframes fadeIn {
@@ -207,6 +211,7 @@
     background: var(--bg2);
     border-radius: 1rem;
     border: var(--border-weight) solid var(--accent);
+    opacity: 1;
 }
 
 .success-message h3 {

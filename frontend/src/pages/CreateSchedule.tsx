@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../styles/CreateSchedule.css';
 import api from '../api';
+import toast from 'react-hot-toast';
 
 function CreateSchedule() {
     const [step, setStep] = useState(1);
@@ -78,7 +79,10 @@ function CreateSchedule() {
         }
     };
 
-    const nextStep = () => setStep(prev => Math.min(prev + 1, 3));
+    const nextStep = (e: React.MouseEvent) => {
+        e.stopPropagation();  // Stop event bubbling
+        setStep(prev => Math.min(prev + 1, 3));
+    };
     const prevStep = () => setStep(prev => Math.max(prev - 1, 1));
 
     const shareableLink = createdScheduleId 
@@ -227,7 +231,10 @@ function CreateSchedule() {
                     {step < 3 ? (
                         <button 
                             type="button" 
-                            onClick={nextStep} 
+                            onClick={(e) => {
+                                e.preventDefault();  // Prevent any default behavior
+                                nextStep(e);
+                            }} 
                             className="nav-button primary"
                             disabled={!isStepValid(step)}
                         >
@@ -235,7 +242,7 @@ function CreateSchedule() {
                         </button>
                     ) : (
                         <button 
-                            type="submit" 
+                            type="submit"
                             className="nav-button primary"
                             disabled={!isStepValid(1) || !isStepValid(2) || !isStepValid(3)}
                         >
@@ -246,7 +253,7 @@ function CreateSchedule() {
             </form>
 
             {createdScheduleId && (
-                <div className="success-message fade-in">
+                <div className="fade-in success-message">
                     <h3>Schedule Created Successfully!</h3>
                     <p>Share this link with others to collect their availability:</p>
                     <div className="share-link-container">
@@ -259,7 +266,7 @@ function CreateSchedule() {
                         <button 
                             onClick={() => {
                                 navigator.clipboard.writeText(shareableLink!);
-                                // Optionally add a toast notification here
+                                toast.success('Link copied to clipboard!');
                             }}
                             className="copy-button"
                         >
