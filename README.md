@@ -103,6 +103,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
-- Calendar visualization libraries
 - Django REST Framework
 - React and Vite communities
+- Cursor AI IDE was used to create this project
