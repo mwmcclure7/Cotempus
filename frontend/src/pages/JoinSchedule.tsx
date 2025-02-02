@@ -149,6 +149,7 @@ function JoinSchedule() {
                 }}
                 interval={schedule.time_slot_duration}
                 onAvailabilityChange={handleAvailabilityChange}
+                name={name}
             />
 
             <div className="action-buttons">
