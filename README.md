@@ -1,6 +1,6 @@
-# Free-Time-Finder
+# Cotempus
 
-Free-Time-Finder is a web application designed to simplify group scheduling by helping teams find the most convenient meeting times based on everyone's availability.
+Cotempus is a web application designed to simplify group scheduling by helping teams find the most convenient meeting times based on everyone's availability.
 
 ## Features
 
@@ -35,8 +35,8 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/mwmcclure7/Free-Time-Finder.git
-cd Free-Time-Finder
+git clone https://github.com/mwmcclure7/Cotempus.git
+cd Cotempus
 ```
 
 2. Set up the backend:

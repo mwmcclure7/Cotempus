@@ -28,7 +28,7 @@ function Home() {
                     Having trouble finding a date and time that works for everyone?
                 </p>
                 <h1 className="hero-title">
-                    Introducing the <span className="gradient-text">Free Time Finder</span>
+                    Introducing <span className="gradient-text">Cotempus</span>
                 </h1>
             </div>
 
@@ -70,7 +70,7 @@ function Home() {
                 </div>
 
                 <div className="benefits-section slide-in">
-                    <h2>Why Use Free Time Finder?</h2>
+                    <h2>Why Use Cotempus?</h2>
                     <div className="benefits-grid">
                         <div className="benefit">
                             <span className="benefit-icon">⚡</span>
@@ -100,9 +100,6 @@ function Home() {
                     <div className="cta-buttons">
                         <button onClick={() => navigate('/create')} className="primary-button">
                             Create a Schedule
-                        </button>
-                        <button onClick={() => navigate('/join')} className="secondary-button">
-                            Join Existing Schedule
                         </button>
                     </div>
                 </div>

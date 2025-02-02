@@ -41,7 +41,7 @@ function Register() {
             <div className="auth-card">
                 <div className="auth-header">
                     <h2>Create Account</h2>
-                    <p>Join Free Time Finder today</p>
+                    <p>Join Cotempus Today</p>
                 </div>
 
                 {error && <div className="auth-error">{error}</div>}

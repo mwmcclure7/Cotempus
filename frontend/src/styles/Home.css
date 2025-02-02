@@ -17,7 +17,7 @@
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 5rem;
     font-weight: var(--thin);
     margin: 0;
 }
@@ -127,12 +127,6 @@
 .primary-button {
     background: linear-gradient(135deg, var(--accent), var(--accent2));
     border: none;
-    padding: 1rem 2rem;
-}
-
-.secondary-button {
-    background: transparent;
-    border: var(--border-weight) solid var(--accent);
     padding: 1rem 2rem;
 }
 

@@ -36,7 +36,7 @@ function SignIn() {
             <div className="auth-card">
                 <div className="auth-header">
                     <h2>Welcome Back!</h2>
-                    <p>Sign in to continue to Free Time Finder</p>
+                    <p>Sign in to continue to Cotempus</p>
                 </div>
 
                 {error && <div className="auth-error">{error}</div>}

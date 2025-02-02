@@ -17,7 +17,7 @@ const Header = () => {
     <header className="header">
       <div className="header-left">
         <Link to="/" className="logo-link">
-          <img src="/FreeTimeFinderLogo.svg" alt="Free Time Finder Logo" className="logo" />
+          <img src="/CotempusLogo.svg" alt="Cotempus Logo" className="logo" />
         </Link>
       </div>
 
