@@ -4,7 +4,7 @@ import { ACCESS_TOKEN } from "./constants";
 const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL
         ? import.meta.env.VITE_API_URL
-        : "http://backend-2184680224:8000/",
+        : "/choreo-apis/cotempus/backend/v1",
 });
 
 api.interceptors.request.use(
