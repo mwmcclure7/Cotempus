@@ -2,7 +2,9 @@ import axios from "axios";
 import { ACCESS_TOKEN } from "./constants";
 
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL : "/choreo-apis/backend-2184680224:8000",
+    baseURL: import.meta.env.VITE_API_URL
+        ? import.meta.env.VITE_API_URL
+        : "http://backend-2184680224:8000/",
 });
 
 api.interceptors.request.use(
