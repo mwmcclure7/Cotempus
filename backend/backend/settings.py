@@ -14,7 +14,6 @@ from pathlib import Path
 from datetime import timedelta
 import os
 from dotenv import load_dotenv
-from urllib.parse import urlparse
 
 # Load environment variables from .env file
 load_dotenv()
@@ -91,25 +90,15 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': tmpPostgres.path.replace('/', ''),
-        'USER': tmpPostgres.username,
-        'PASSWORD': tmpPostgres.password,
-        'HOST': tmpPostgres.hostname,
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': os.getenv("DB_HOST"),
         'PORT': 5432,
     }
-    # "default": {
-    #     "ENGINE": "django.db.backends.postgresql",
-    #     "NAME": os.getenv("DB_NAME"),
-    #     "USER": os.getenv("DB_USER"),
-    #     "PASSWORD": os.getenv("DB_PASSWORD"),
-    #     "HOST": os.getenv("DB_HOST"),
-    #     "PORT": os.getenv("DB_PORT"),
-    # }
 }
 
 # Password validation
