@@ -51,9 +51,34 @@ INSTALLED_APPS = [
     "schedule",
 ]
 
-# Add CORS settings
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "https://cotempus.onrender.com",
+    "http://localhost:5173",  # For local development
+]
 CORS_ALLOW_CREDENTIALS = True
+
+# Additional CORS settings for handling preflight requests
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",  # Add this at the top
