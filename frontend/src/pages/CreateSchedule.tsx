@@ -86,7 +86,7 @@ function CreateSchedule() {
     const prevStep = () => setStep(prev => Math.max(prev - 1, 1));
 
     const shareableLink = createdScheduleId 
-        ? `${window.location.origin}/schedule/${createdScheduleId}` 
+        ? `${window.location.origin}/#/event/${createdScheduleId}` 
         : null;
 
     return (
@@ -112,7 +112,7 @@ function CreateSchedule() {
                     <div className="form-step fade-in">
                         <h2>Basic Information</h2>
                         <div className="form-group">
-                            <label htmlFor="title">Schedule Title</label>
+                            <label htmlFor="title">Event Title</label>
                             <input
                                 type="text"
                                 id="title"
@@ -130,7 +130,7 @@ function CreateSchedule() {
                                 name="description"
                                 value={formData.description}
                                 onChange={handleInputChange}
-                                placeholder="Add any additional details about the schedule"
+                                placeholder="Add any additional details about the event"
                                 rows={4}
                             />
                         </div>
@@ -246,7 +246,7 @@ function CreateSchedule() {
                             className="nav-button primary"
                             disabled={!isStepValid(1) || !isStepValid(2) || !isStepValid(3)}
                         >
-                            Create Schedule
+                            Create Event
                         </button>
                     )}
                 </div>
@@ -254,7 +254,7 @@ function CreateSchedule() {
 
             {createdScheduleId && (
                 <div className="fade-in success-message">
-                    <h3>Schedule Created Successfully!</h3>
+                    <h3>Event Created Successfully!</h3>
                     <p>Share this link with others to collect their availability:</p>
                     <div className="share-link-container">
                         <input 

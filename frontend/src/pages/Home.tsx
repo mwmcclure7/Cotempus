@@ -38,10 +38,10 @@ function Home() {
                     <div className="steps-container">
                         <div className="step fade-in">
                             <div className="step-number">1</div>
-                            <h3>Create a Schedule</h3>
-                            <p>Start by creating a schedule for your event. Share the generated link with your group.</p>
+                            <h3>Create an Event</h3>
+                            <p>Start by creating an event. Share the generated link with your group.</p>
                             <button onClick={() => navigate('/create')} className="cta-button">
-                                Create Schedule
+                                Create Event
                             </button>
                         </div>
 
@@ -85,7 +85,7 @@ function Home() {
                         <div className="benefit">
                             <span className="benefit-icon">🔒</span>
                             <h4>Private & Secure</h4>
-                            <p>Your schedule data stays private</p>
+                            <p>Your event data stays private</p>
                         </div>
                         <div className="benefit">
                             <span className="benefit-icon">🌐</span>
@@ -99,7 +99,7 @@ function Home() {
                     <h2>Ready to find the perfect time?</h2>
                     <div className="cta-buttons">
                         <button onClick={() => navigate('/create')} className="primary-button">
-                            Create a Schedule
+                            Create an Event
                         </button>
                     </div>
                 </div>

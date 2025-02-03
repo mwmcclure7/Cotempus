@@ -69,15 +69,15 @@ function MySchedules() {
         }
     };
 
-    if (loading) return <div className="loading">Loading your schedules...</div>;
+    if (loading) return <div className="loading">Loading your events...</div>;
     if (error) return <div className="error">{error}</div>;
     if (schedules.length === 0) {
         return (
             <div className="empty-state">
-                <h2>No Schedules Yet</h2>
-                <p>Create your first schedule to start finding the perfect meeting time!</p>
-                <button onClick={() => window.location.href = '/create'} className="create-button">
-                    Create Schedule
+                <h2>No Events Yet</h2>
+                <p>Create your first event to start finding the perfect meeting time!</p>
+                <button onClick={() => window.location.href = '/#/create'} className="create-button">
+                    Create Event
                 </button>
             </div>
         );
@@ -86,9 +86,9 @@ function MySchedules() {
     return (
         <div className="my-schedules-container">
             <div className="page-header">
-                <h1>My Schedules</h1>
-                <button onClick={() => window.location.href = '/create'} className="create-button">
-                    Create New Schedule
+                <h1>My Events</h1>
+                <button onClick={() => window.location.href = '/#/create'} className="create-button">
+                    Create New Event
                 </button>
             </div>
             

@@ -23,8 +23,8 @@ const Header = () => {
 
       <nav className="header-center">
         <Link to="/" className="nav-link">Home</Link>
-        <Link to="/create" className="nav-link">Create Schedule</Link>
-        <Link to="/my-schedules" className="nav-link">My Schedules</Link>
+        <Link to="/create" className="nav-link">Create Event</Link>
+        <Link to="/my-events" className="nav-link">My Events</Link>
       </nav>
 
       <div className="header-right">

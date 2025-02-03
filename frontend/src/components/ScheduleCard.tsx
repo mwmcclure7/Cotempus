@@ -20,7 +20,7 @@ function ScheduleCard({ schedule, onUpdate, onDelete }: ScheduleCardProps) {
     const [editedDescription, setEditedDescription] = useState(schedule.description);
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
-    const shareableLink = `${window.location.origin}/schedule/${schedule.id}`;
+    const shareableLink = `${window.location.origin}/#/event/${schedule.id}`;
 
     const handleSaveEdit = async () => {
         try {

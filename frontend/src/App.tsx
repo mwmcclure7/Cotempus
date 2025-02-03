@@ -22,10 +22,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<ProtectedRoute><CreateSchedule /></ProtectedRoute>} />
             <Route path="/join" element={<JoinSchedule />} />
-            <Route path="/schedule/:scheduleId" element={<JoinSchedule />} />
+            <Route path="/event/:eventId" element={<JoinSchedule />} />
             <Route path="/login" element={<SignIn />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/my-schedules" element={<ProtectedRoute><MySchedules /></ProtectedRoute>} />
+            <Route path="/my-events" element={<ProtectedRoute><MySchedules /></ProtectedRoute>} />
             <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
           </Routes>
         </div>

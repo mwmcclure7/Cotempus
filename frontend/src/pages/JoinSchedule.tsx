@@ -22,7 +22,7 @@ interface AvailabilityBlock {
 }
 
 function JoinSchedule() {
-    const { scheduleId } = useParams();
+    const { eventId } = useParams();
     const navigate = useNavigate();
     const [schedule, setSchedule] = useState<Schedule | null>(null);
     const [name, setName] = useState('');
@@ -32,14 +32,14 @@ function JoinSchedule() {
     const [submitted, setSubmitted] = useState(false);
 
     useEffect(() => {
-        if (!scheduleId) {
+        if (!eventId) {
             navigate('/');
             return;
         }
         
         const fetchSchedule = async () => {
             try {
-                const response = await api.get<Schedule>(`/api/schedules/${scheduleId}/`);
+                const response = await api.get<Schedule>(`/api/schedules/${eventId}/`);
                 setSchedule(response.data);
             } catch (err) {
                 setError('Failed to load schedule details.');
@@ -50,7 +50,7 @@ function JoinSchedule() {
         };
 
         fetchSchedule();
-    }, [scheduleId, navigate]);
+    }, [eventId, navigate]);
 
     const handleAvailabilityChange = (blocks: AvailabilityBlock[]) => {
         setAvailabilityBlocks(blocks);
@@ -68,7 +68,7 @@ function JoinSchedule() {
         }
 
         try {
-            await api.post(`/api/schedules/${scheduleId}/respond/`, {
+            await api.post(`/api/schedules/${eventId}/respond/`, {
                 name: name.trim(),
                 time_slots: availabilityBlocks.map(block => ({
                     start_time: block.start.toISOString(),
@@ -86,7 +86,7 @@ function JoinSchedule() {
     if (loading) {
         return (
             <div className="join-schedule-container">
-                <div className="loading">Loading schedule details...</div>
+                <div className="loading">Loading event details...</div>
             </div>
         );
     }
@@ -102,7 +102,7 @@ function JoinSchedule() {
     if (!schedule) {
         return (
             <div className="join-schedule-container">
-                <div className="error">Schedule not found</div>
+                <div className="error">Event not found</div>
             </div>
         );
     }
